@@ -21,21 +21,21 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Setup Node.js environment
-  uses: actions/setup-node@v2.1.1
-  with:
-      version: 12
-  name: GitHub Action for Yarn
-  uses: Borales/actions-yarn@v2.3.0
-  with:
-    # Yarn command
-    cmd: install
+      uses: actions/setup-node@v2.1.1
+      with:
+        version: 12
+    - name: GitHub Action for Yarn
+      uses: Borales/actions-yarn@v2.3.0
+      with:
+        # Yarn command
+        cmd: install
     
-    name : creating build
-    run: yarn build
+    - name : creating build
+      run: yarn build
     
-    name: installing surge
-    run: npm insall -g surge
+    - name: installing surge
+      run: npm insall -g surge
   
-  name: deploying on surge
-  run: surge ./build http://bootcamp-box02.surge.sh --token ${{secrete.SURGE_TOKEN}}
+    - name: deploying on surge
+      run: surge ./build http://bootcamp-box02.surge.sh --token ${{secrete.SURGE_TOKEN}}
     
