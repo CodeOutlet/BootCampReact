@@ -37,5 +37,5 @@ jobs:
       run: npm insall -g surge
   
     - name: deploying on surge
-      run: surge ./build http://bootcamp-box02.surge.sh --token ${{secrete.SURGE_TOKEN}}
+      run: surge ./build http://bootcamp-box02.surge.sh --token ${{secrets.SURGE_TOKEN}}
     
